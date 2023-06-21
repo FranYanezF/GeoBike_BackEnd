@@ -1,22 +1,27 @@
 {
-  "name": "geobike-backend",
+  "name": "task-app-api",
   "version": "1.0.0",
-  "description": "backend de la aplicacion geobike",
-  "main": "index.js",
+  "description": "",
   "scripts": {
-    "start": "node index.js",
-    "devStart": "nodemon index.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
+    "bcryptjs": "^2.4.3",
+    "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.0",
-    "express": "^4.18.2",
-    "mysql": "^2.18.1",
-    "mysql2": "^3.3.5",
-    "nodemon": "^2.0.22"
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16",
+    "passport": "^0.5.3",
+    "passport-google-oauth20": "^2.0.0"
   }
 }
