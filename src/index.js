@@ -44,8 +44,16 @@ app.use((req, res, next) => {
   next();
 });
 
-
+mongoose.connect(process.env.MONGO_URL)
+  .then(() => {
+    console.log('Connected to MongoDB')
+    app.listen(PORT, () => {
+      console.log(`Example app listening on port ${PORT}`)
+    })
+  })
+/*
   app.listen(PORT, () => {
     console.log(`Example app listening on port ${PORT}`)
   })
+  */
 
