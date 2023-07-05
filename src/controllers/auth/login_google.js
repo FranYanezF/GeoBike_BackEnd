@@ -7,7 +7,7 @@ async function loginGoogle(req, res) {
             const userValid = await User.findOne({ email: req.user._json.email })
             if(!userValid){
                 await registerSchema.validateAsync({name: req.user.displayName, email:req.user._json.email,isAdmin : false,password: "Google" })
-                const user = await User.create({name: req.user.displayName, email:req.user._json.email,isAdmin : false,password: "Google" })
+                const user = await User.create({id:req.user._json.email,name: req.user.displayName, email:req.user._json.email,isAdmin : false,password: "Google" })
                 console.log("Usuario de Google insertado a la base de datos")
             }
             else{

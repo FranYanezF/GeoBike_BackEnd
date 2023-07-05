@@ -5,8 +5,12 @@ const cors = require("cors")
 const cookieSession = require("cookie-session")
 const passportSetup = require("./passport")
 const passport = require("passport")
+const bodyParser = require('body-parser')
 const tokenValidation = require('./middlewares/tokenValidation')
 const { tallerRouter, authRouter} = require('./routes')
+const favRoutes = require('./routes/favRoutes')
+const userRouter = require('./routes/userRouter')
+
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -33,6 +37,8 @@ app.use(cors({
 // llamada a rutas
 app.use('/api/talleres', tallerRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/fav',favRoutes)
+app.use('/api/user',userRouter)
 
 
 //todo: REVISAR EL PROBLEMA DE CORS
